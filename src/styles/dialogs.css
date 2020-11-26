@@ -1,0 +1,5 @@
+@media (min-width: 959px) {
+	md-dialog.md-dialog-fullscreen {
+		min-height: 80%;
+		min-width: 60%;
+		border-radius: 0; } }

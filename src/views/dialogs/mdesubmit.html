@@ -1,0 +1,35 @@
+<md-dialog 
+	ng-class="{'mde-rtl':mdeModel.style.rtl}"
+	aria-label="Submit for Donate News" ng-cloak>
+  <form ng-submit="answer(address)">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+   		<img src="images/logo.svg" width="64"></img>
+        <h2>{{mdeModel.title}}</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+          <md-icon aria-label="Close dialog">close</md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div 
+		class="md-dialog-content" 
+		layout="column">
+        <p>{{mdeModel.message}}</p>
+        <md-input-container>
+          <label translate>email</label>
+          <input ng-model="address">
+        </md-input-container>
+        <div layout="row">
+	        <md-button class="md-raised md-primary" ng-click="answer(address)" >
+	        	{{'submit'|translate}}
+	        </md-button>
+	        <md-button ng-click="cancel()" >
+	        	{{'cancel'|translate}}
+	        </md-button>
+        </div>
+        </div>
+    </md-dialog-content>
+  </form>
+</md-dialog>
