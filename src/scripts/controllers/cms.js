@@ -1,5 +1,5 @@
 'use strict';
-angular.module('ngMaterialExtension')
+angular.module('ngMaterialWeburger')
 .controller('MdeCmsCtrl', function($scope, $rootScope, $http, $cms, PaginatorParameter) {
 	var paginatorParameter = new PaginatorParameter();
 	var requests = null;

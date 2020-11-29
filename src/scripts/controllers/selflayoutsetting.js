@@ -1,5 +1,5 @@
 'use strict';
-angular.module('ngMaterialExtension')
+angular.module('ngMaterialWeburger')
     .controller('SelfLayoutSettingsCtrl', function($scope, $settings) {
         var scope = $scope;
         scope.flexAlignItem = [

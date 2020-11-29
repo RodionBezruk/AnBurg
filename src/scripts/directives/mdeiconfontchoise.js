@@ -1,5 +1,5 @@
 'use strict';
-angular.module('ngMaterialExtension')
+angular.module('ngMaterialWeburger')
 .directive(
 		'mdeIconfontChoise',
 		function() {

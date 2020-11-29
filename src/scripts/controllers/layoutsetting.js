@@ -1,5 +1,5 @@
 'use strict';
-angular.module('ngMaterialExtension')
+angular.module('ngMaterialWeburger')
 .controller('LayoutSettingsCtrl', function($scope, $settings) {
 	var scope = $scope;
 	scope.directions = [ {

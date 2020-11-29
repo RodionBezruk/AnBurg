@@ -1,5 +1,5 @@
 'use strict';
-angular.module('ngMaterialExtension')
+angular.module('ngMaterialWeburger')
 .directive('mdeNotfoundElement', function() {
 	return {
 		templateUrl : 'views/directives/mdenotfoundelement.html',

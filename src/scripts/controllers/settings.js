@@ -1,5 +1,5 @@
 'use strict';
-angular.module('ngMaterialExtension')
+angular.module('ngMaterialWeburger')
 .controller('SettingsCtrl', function($scope, $settings) {
 	var scope = $scope;
 	function loadPages() {

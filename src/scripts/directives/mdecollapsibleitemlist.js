@@ -1,5 +1,5 @@
 'use strict';
-angular.module('ngMaterialExtension')
+angular.module('ngMaterialWeburger')
 .directive('mdeCollapsibleItemList', function() {
 	return {
 		templateUrl : 'views/directives/mdecollapsibleitemlist.html',

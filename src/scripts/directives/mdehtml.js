@@ -1,5 +1,5 @@
 'use strict';
-angular.module('ngMaterialExtension')
+angular.module('ngMaterialWeburger')
     .directive('mdeHtml', function () {
         return {
             templateUrl: 'views/directives/mdehtml.html',

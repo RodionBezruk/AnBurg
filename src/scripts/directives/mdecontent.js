@@ -1,5 +1,5 @@
 'use strict';
-angular.module('ngMaterialExtension')
+angular.module('ngMaterialWeburger')
 .directive('mdeContent', function($compile, $widget) {
 	var bodyElementSelector = 'div#mde-content-body';
 	var placeholderElementSelector = 'div#mde-content-placeholder';

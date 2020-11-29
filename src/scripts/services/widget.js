@@ -1,5 +1,5 @@
 'use strict';
-angular.module('ngMaterialExtension')
+angular.module('ngMaterialWeburger')
 .service('$widget', function($q, $timeout, PaginatorPage) {
 	var contentElementAsso = {
 		Page : {

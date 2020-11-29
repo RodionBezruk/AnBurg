@@ -1,6 +1,6 @@
 'use strict';
 describe('Controller: DialogsCtrl', function () {
-  beforeEach(module('ngMaterialExtension'));
+  beforeEach(module('ngMaterialWeburger'));
   var DialogsCtrl;
   var scope;
   var ngModel;

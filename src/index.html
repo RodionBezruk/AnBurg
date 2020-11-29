@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app="ngMaterialExtension">
+<html ng-app="ngMaterialWeburger">
   <head>
     <meta charset="utf-8">
     <meta content='IE=edge' http-equiv='X-UA-Compatible'>
@@ -156,7 +156,7 @@
     <script src="scripts/services/settings.js"></script>
     <script type="text/javascript">
     // Test controller
-    angular.module('ngMaterialExtension')
+    angular.module('ngMaterialWeburger')
     .controller('MyTestCtrl', function($scope, $http, $mdDialog){
     	$http.get('temp.json').then(function (res){
     		$scope.model = res.data;

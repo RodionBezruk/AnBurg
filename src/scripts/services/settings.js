@@ -1,5 +1,5 @@
 'use strict';
-angular.module('ngMaterialExtension')
+angular.module('ngMaterialWeburger')
 .service('$settings', function() {
 	var settingPages = {
 		notFound : {

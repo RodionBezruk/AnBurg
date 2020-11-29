@@ -1,5 +1,5 @@
 'use strict';
-angular.module('ngMaterialExtension')
+angular.module('ngMaterialWeburger')
 .controller('ContentSelectCtrl', function($scope, $widget, PaginatorParameter) {
 	var scope = $scope;
 	var paginatorParameter = new PaginatorParameter();

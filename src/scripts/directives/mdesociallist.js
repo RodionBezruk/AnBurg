@@ -1,5 +1,5 @@
 'use strict';
-angular.module('ngMaterialExtension')
+angular.module('ngMaterialWeburger')
 .directive('mdeSocialList', function() {
 	return {
 		restrict : 'E',

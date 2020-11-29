@@ -1,5 +1,5 @@
 'use strict';
-angular.module('ngMaterialExtension')
+angular.module('ngMaterialWeburger')
 .filter('unsafe', function($sce) {
 	return function(val) {
 		return $sce.trustAsHtml(val);

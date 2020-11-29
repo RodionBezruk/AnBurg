@@ -1,5 +1,5 @@
 'use strict';
-angular.module('ngMaterialExtension')
+angular.module('ngMaterialWeburger')
 .controller('ActionCtrl', function($scope) {
 	var types = [ {
 		icon : 'link',

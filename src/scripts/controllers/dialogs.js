@@ -1,5 +1,5 @@
 'use strict';
-angular.module('ngMaterialExtension')
+angular.module('ngMaterialWeburger')
     .controller('DialogsCtrl', function ($scope, $mdDialog, mdeModel, style) {
         function hide() {
             $mdDialog.hide();
