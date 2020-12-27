@@ -1,10 +1,10 @@
 'use strict';
 angular.module('ngMaterialWeburger')
-.directive('mdeSocialList', function() {
+.directive('wbSocialList', function() {
 	return {
 		restrict : 'E',
 		replace : true,
-		templateUrl : 'views/directives/mdesociallist.html',
+		templateUrl : 'views/directives/wb-sociallist.html',
 		scope : {
 			mdeEditable: '=?',
 			mdeModel: '=?',
@@ -25,7 +25,7 @@ angular.module('ngMaterialWeburger')
 			function editSocial(social){
 				return $mdDialog.show({
 					controller : 'DialogsCtrl',
-					templateUrl : 'views/dialogs/mdesocial.html',
+					templateUrl : 'views/dialogs/wb-social.html',
 					parent : angular.element(document.body),
 					clickOutsideToClose : true,
 					locals : {
@@ -60,7 +60,7 @@ angular.module('ngMaterialWeburger')
 			function settings (){
 				return $mdDialog.show({
 					controller : 'DialogsCtrl',
-					templateUrl : 'views/dialogs/mdesettings.html',
+					templateUrl : 'views/dialogs/wb-settings.html',
 					parent : angular.element(document.body),
 					clickOutsideToClose : true,
 					locals : {

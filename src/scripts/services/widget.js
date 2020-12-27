@@ -3,7 +3,7 @@ angular.module('ngMaterialWeburger')
 .service('$widget', function($q, $timeout, PaginatorPage) {
 	var contentElementAsso = {
 		Page : {
-			dom : '<mde-content></mde-content>',
+			dom : '<wb-content></wb-content>',
 			label : 'Panel',
 			description : 'Panel contains list of widgets.',
 			image : 'images/mde/mdecontent.svg',
@@ -17,7 +17,7 @@ angular.module('ngMaterialWeburger')
 			}
 		},
 		BrandAction : {
-			dom : '<mde-brand-action></mde-brand-action>',
+			dom : '<wb-brand-action></wb-brand-action>',
 			label : 'Brand with action',
 			description : 'A brand image with action list',
 			image : 'images/mde/mdebrandaction.svg',
@@ -28,7 +28,7 @@ angular.module('ngMaterialWeburger')
 			}
 		},
 		Copyright : {
-			dom : '<mde-copyright></mde-copyright>',
+			dom : '<wb-copyright></wb-copyright>',
 			label : 'Copyright',
 			description : 'Copyright text',
 			image : 'images/mde/mdecopyright.svg',
@@ -45,7 +45,7 @@ angular.module('ngMaterialWeburger')
 			}
 		},
 		FeatureList : {
-			dom : '<mde-feature-list></mde-feature-list>',
+			dom : '<wb-feature-list></wb-feature-list>',
 			label : 'Features list',
 			description : 'List of features',
 			image : 'images/mde/mdefeaturelist.svg',
@@ -56,7 +56,7 @@ angular.module('ngMaterialWeburger')
 			}
 		},
 		SocialList : {
-			dom : '<mde-social-list></mde-social-list>',
+			dom : '<wb-social-list></wb-social-list>',
 			label : 'Socials link',
 			description : 'Social link list',
 			image : 'images/mde/mdesociallist.svg',
@@ -67,7 +67,7 @@ angular.module('ngMaterialWeburger')
 			}
 		},
 		LinkList : {
-			dom : '<mde-link-list></mde-link-list>',
+			dom : '<wb-link-list></wb-link-list>',
 			label : 'Link list',
 			description : 'List of links and ticktes',
 			image : 'images/mde/mdelinklist.svg',
@@ -78,13 +78,13 @@ angular.module('ngMaterialWeburger')
 			}
 		},
 		NotfoundElement : {
-			dom : '<mde-notfound-element></mde-notfound-element>',
+			dom : '<wb-notfound-element></wb-notfound-element>',
 			label : 'Not found',
 			image : 'images/mde/mdenotfoundelement.svg',
 			link : 'link',
 		},
 		HtmlText : {
-			dom : '<mde-html ng-class="[mdeModel.style.flexAlignItem]" ></mde-html>',
+			dom : '<wb-html ng-class="[mdeModel.style.flexAlignItem]" ></wb-html>',
 			label : 'HTML text',
 			description : 'An HTML block text.',
 			image : 'images/mde/mdehtml.svg',
@@ -99,7 +99,7 @@ angular.module('ngMaterialWeburger')
 			}
 		},
 		CollapsibleItemList : {
-			dom : '<mde-collapsible-item-list></mde-collapsible-item-list>',
+			dom : '<wb-collapsible-item-list></wb-collapsible-item-list>',
 			label : 'Collapsible item list',
 			description : 'List of item with a collapsiblity',
 			image : 'images/mde/mdenotfoundelement.svg',
