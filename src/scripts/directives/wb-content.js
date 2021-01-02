@@ -3,25 +3,25 @@ angular.module('ngMaterialWeburger')
 .directive(
 	'wbContent',
 	function($compile, $widget) {
-	    var bodyElementSelector = 'div#mde-content-body';
-	    var placeholderElementSelector = 'div#mde-content-placeholder';
+	    var bodyElementSelector = 'div#wb-content-body';
+	    var placeholderElementSelector = 'div#wb-content-placeholder';
 	    return {
 		templateUrl : 'views/directives/wb-content.html',
 		transclude : true,
 		restrict : 'E',
 		replace : true,
 		scope : {
-		    mdeModel : '=?',
-		    mdeEditable : '=?',
-		    mdeParent : '=?'
+		    wbModel : '=?',
+		    wbEditable : '=?',
+		    wbParent : '=?'
 		},
 		controller : function($scope, $element, $mdDialog) {
 		    var scope = $scope;
 		    function isEditable() {
-			if (scope.mdeParent) {
-			    return scope.mdeParent.isEditable();
+			if (scope.wbParent) {
+			    return scope.wbParent.isEditable();
 			}
-			return scope.mdeEditable;
+			return scope.wbEditable;
 		    }
 		    function createWidget(widget, parentScope, model) {
 			var element = angular.element(widget);
@@ -30,8 +30,8 @@ angular.module('ngMaterialWeburger')
 			element.attr('wb-parent', 'wbParent');
 			var childScope = parentScope.$new(true, parentScope);
 			childScope.model = model;
-			childScope.mdeEditable = scope.isEditable;
-			childScope.mdeParent = parentScope;
+			childScope.wbEditable = scope.isEditable;
+			childScope.wbParent = parentScope;
 			return $compile(element)(childScope);
 		    }
 		    function removeWidgets() {
@@ -41,17 +41,17 @@ angular.module('ngMaterialWeburger')
 			.empty();
 		    }
 		    function removeWidget(model) {
-			if (model == scope.mdeModel) {
-			    scope.mdeParent.removeWidget(model);
+			if (model == scope.wbModel) {
+			    scope.wbParent.removeWidget(model);
 			}
-			var index = scope.mdeModel.contents.indexOf(model);
+			var index = scope.wbModel.contents.indexOf(model);
 			if (index > -1) {
-			    scope.mdeModel.contents.splice(index, 1);
+			    scope.wbModel.contents.splice(index, 1);
 			}
 			removeWidgets();
-			scope.mdeModel.contents.forEach(addWidget);
+			scope.wbModel.contents.forEach(addWidget);
 		    }
-		    function newWidget(mdeModel) {
+		    function newWidget(wbModel) {
 			$mdDialog.show({
 			    controller : 'DialogsCtrl',
 			    templateUrl : 'views/dialogs/wb-selectwidget.html',
@@ -59,11 +59,11 @@ angular.module('ngMaterialWeburger')
 			    clickOutsideToClose : true,
 			    fullscreen : true,
 			    locals : {
-				mdeModel : {},
+				wbModel : {},
 				style : {}
 			    },
 			}).then(function(model) {
-			    mdeModel.contents.push(model);
+			    wbModel.contents.push(model);
 			    addWidget(model);
 			});
 		    }
@@ -83,8 +83,8 @@ angular.module('ngMaterialWeburger')
 			    clickOutsideToClose : true,
 			    fullscreen : true,
 			    locals : {
-				mdeModel : scope.mdeModel,
-				mdeParent : scope.mdeParent,
+				wbModel : scope.wbModel,
+				wbParent : scope.wbParent,
 				style : {
 				    pages : [ 'description', 'border',
 					    'background', 'pageLayout',
@@ -101,16 +101,16 @@ angular.module('ngMaterialWeburger')
 		    scope.removeWidget = removeWidget;
 		    scope.newWidget = newWidget;
 		    scope.isEditable = isEditable
-		    scope.$watch('mdeModel', function() {
+		    scope.$watch('wbModel', function() {
 			removeWidgets();
-			if (!scope.mdeModel) {
+			if (!scope.wbModel) {
 			    return;
 			}
-			if (!isArray(scope.mdeModel.contents)) {
-			    scope.mdeModel.contents = [];
+			if (!isArray(scope.wbModel.contents)) {
+			    scope.wbModel.contents = [];
 			}
-			scope.mdeModel.type = 'Page';
-			scope.mdeModel.contents.forEach(addWidget);
+			scope.wbModel.type = 'Page';
+			scope.wbModel.contents.forEach(addWidget);
 		    });
 		}
 	    };
