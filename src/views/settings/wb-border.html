@@ -1,0 +1,202 @@
+<div layout="column">
+    <div class="preview-box wb-flex-item-stretch">
+        <div class="header">Preview</div>
+        <div class="preview-area"
+             ng-class="[wbParent.wbModel.style.flexDirection,wbModel.style.justifyContent, wbModel.style.alignItems]"
+             style="display: flex">
+            <div class="widget"
+                 style="width:100px; height:50px; margin: 20px"
+                 ng-style="{
+            'border-top-left-radius':(wbModel.style.borderRadius.uniform) ? wbModel.style.borderRadius.all : wbModel.style.borderRadius.topLeft,
+            'border-top-right-radius':(wbModel.style.borderRadius.uniform) ? wbModel.style.borderRadius.all : wbModel.style.borderRadius.topRight,
+            'border-bottom-left-radius':(wbModel.style.borderRadius.uniform) ? wbModel.style.borderRadius.all : wbModel.style.borderRadius.bottomLeft,
+            'border-bottom-right-radius':(wbModel.style.borderRadius.uniform) ? wbModel.style.borderRadius.all : wbModel.style.borderRadius.bottomRight,
+            'border-left-style':(wbModel.style.borderStyleColorWidth.uniform) ? wbModel.style.borderStyle.all : wbModel.style.borderStyle.left,
+            'border-right-style':(wbModel.style.borderStyleColorWidth.uniform) ? wbModel.style.borderStyle.all : wbModel.style.borderStyle.right,
+            'border-top-style':(wbModel.style.borderStyleColorWidth.uniform) ? wbModel.style.borderStyle.all : wbModel.style.borderStyle.top,
+            'border-bottom-style':(wbModel.style.borderStyleColorWidth.uniform) ? wbModel.style.borderStyle.all : wbModel.style.borderStyle.bottom,
+            'border-left-width':(wbModel.style.borderStyleColorWidth.uniform) ? wbModel.style.borderWidth.all : wbModel.style.borderWidth.left,
+            'border-right-width':(wbModel.style.borderStyleColorWidth.uniform) ? wbModel.style.borderWidth.all : wbModel.style.borderWidth.right,
+            'border-top-width':(wbModel.style.borderStyleColorWidth.uniform) ? wbModel.style.borderWidth.all : wbModel.style.borderWidth.top,
+            'border-bottom-width':(wbModel.style.borderStyleColorWidth.uniform) ? wbModel.style.borderWidth.all : wbModel.style.borderWidth.bottom,
+            'border-left-color':(wbModel.style.borderStyleColorWidth.uniform) ? wbModel.style.borderColor.all : wbModel.style.borderColor.left,
+            'border-right-color':(wbModel.style.borderStyleColorWidth.uniform) ? wbModel.style.borderColor.all : wbModel.style.borderColor.right,
+            'border-top-color':(wbModel.style.borderStyleColorWidth.uniform) ? wbModel.style.borderColor.all : wbModel.style.borderColor.top,
+            'border-bottom-color':(wbModel.style.borderStyleColorWidth.uniform) ? wbModel.style.borderColor.all : wbModel.style.borderColor.bottom,
+            }"
+                 layout="row" layout-align="center center"
+            >
+                <p>item</p>
+            </div>
+        </div>
+    </div>
+    <div ng-controller="BorderSettingCtrl"
+         class="setting-panel"
+         layout="column"
+         layout-gt-sm="row">
+        <md-list>
+            <md-subheader>Corner Radius</md-subheader>
+            <md-divider></md-divider>
+            <md-checkbox ng-model="wbModel.style.borderRadius.uniform">All equal</md-checkbox>
+            <div layout="row" class="wb-flex-align-items-center" ng-show="wbModel.style.borderRadius.uniform">
+                <span>Radius</span>
+                <md-slider flex min="0" max="100" ng-model="wbModel.style.borderRadius.all">
+                </md-slider>
+                <md-input-container>
+                    <input style="width: 50px" flex type="number" ng-model="wbModel.style.borderRadius.all">
+                </md-input-container>
+            </div>
+            <div layout="row" class="wb-flex-align-items-center" ng-hide="wbModel.style.borderRadius.uniform">
+                <span>Left</span>
+                <md-slider flex min="0" max="100" ng-model="wbModel.style.borderRadius.topLeft">
+                </md-slider>
+                <md-input-container>
+                    <input style="width: 50px" flex type="number" ng-model="wbModel.style.borderRadius.topLeft">
+                </md-input-container>
+            </div>
+            <div layout="row" class="wb-flex-align-items-center" ng-hide="wbModel.style.borderRadius.uniform">
+                <span>Right</span>
+                <md-slider flex min="0" max="100" ng-model="wbModel.style.borderRadius.topRight">
+                </md-slider>
+                <md-input-container>
+                    <input style="width: 50px" flex type="number" ng-model="wbModel.style.borderRadius.topRight">
+                </md-input-container>
+            </div>
+            <div layout="row" class="wb-flex-align-items-center" ng-hide="wbModel.style.borderRadius.uniform">
+                <span>Top</span>
+                <md-slider flex min="0" max="100" ng-model="wbModel.style.borderRadius.bottomLeft">
+                </md-slider>
+                <md-input-container>
+                    <input style="width: 50px" flex type="number" ng-model="wbModel.style.borderRadius.bottomLeft">
+                </md-input-container>
+            </div>
+            <div layout="row" class="wb-flex-align-items-center" ng-hide="wbModel.style.borderRadius.uniform">
+                <span>Bottom</span>
+                <md-slider flex min="0" max="100" ng-model="wbModel.style.borderRadius.bottomRight">
+                </md-slider>
+                <md-input-container>
+                    <input style="width: 50px" flex type="number" ng-model="wbModel.style.borderRadius.bottomRight">
+                </md-input-container>
+            </div>
+        </md-list>
+        <md-list>
+            <md-subheader>Style/Color/Thickness</md-subheader>
+            <md-divider></md-divider>
+            <md-checkbox ng-model="wbModel.style.borderStyleColorWidth.uniform">All equal</md-checkbox>
+            <div layout="row" class="wb-flex-align-items-start" ng-show="wbModel.style.borderStyleColorWidth.uniform">
+                <md-input-container flex="1">
+                    <label>Style</label>
+                    <md-select ng-model="wbModel.style.borderStyle.all">
+                        <md-option ng-repeat="style in styles"
+                                   value="{{style.value}}">
+                            {{style.title}}
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+                <md-input-container flex="0" style="min-width: 100px">
+                    <label>Thickness</label>
+                    <input flex type="number" ng-model="wbModel.style.borderWidth.all">
+                </md-input-container>
+                <md-color-picker
+                        class="color-picker-hide-textbox"
+                        md-color-clear-button="false"
+                        label="Color"
+                        icon="brush"
+                        ng-model="wbModel.style.borderColor.all">
+                </md-color-picker>
+            </div>
+            <div layout="row" class="wb-flex-align-items-start" ng-hide="wbModel.style.borderStyleColorWidth.uniform">
+                <span>Left: </span>
+                <md-input-container flex="1">
+                    <label>Style</label>
+                    <md-select ng-model="wbModel.style.borderStyle.left">
+                        <md-option ng-repeat="style in styles"
+                                   value="{{style.value}}">
+                            {{style.title}}
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+                <md-input-container flex="0" style="min-width: 100px">
+                    <label>Thickness</label>
+                    <input flex type="number" ng-model="wbModel.style.borderWidth.left">
+                </md-input-container>
+                <md-color-picker
+                        class="color-picker-hide-textbox"
+                        md-color-clear-button="false"
+                        label="Color"
+                        icon="brush"
+                        ng-model="wbModel.style.borderColor.left">
+                </md-color-picker>
+            </div>
+            <div layout="row" class="wb-flex-align-items-start" ng-hide="wbModel.style.borderStyleColorWidth.uniform">
+                <span>Right: </span>
+                <md-input-container flex="1">
+                    <label>Style</label>
+                    <md-select ng-model="wbModel.style.borderStyle.right">
+                        <md-option ng-repeat="style in styles"
+                                   value="{{style.value}}">
+                            {{style.title}}
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+                <md-input-container flex="0" style="min-width: 100px">
+                    <label>Thickness</label>
+                    <input flex type="number" ng-model="wbModel.style.borderWidth.right">
+                </md-input-container>
+                <md-color-picker
+                        class="color-picker-hide-textbox"
+                        md-color-clear-button="false"
+                        label="Color"
+                        icon="brush"
+                        ng-model="wbModel.style.borderColor.right">
+                </md-color-picker>
+            </div>
+            <div layout="row" class="wb-flex-align-items-start" ng-hide="wbModel.style.borderStyleColorWidth.uniform">
+                <span>Top: </span>
+                <md-input-container flex="1">
+                    <label>Style</label>
+                    <md-select ng-model="wbModel.style.borderStyle.top">
+                        <md-option ng-repeat="style in styles"
+                                   value="{{style.value}}">
+                            {{style.title}}
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+                <md-input-container flex="0" style="min-width: 100px">
+                    <label>Thickness</label>
+                    <input flex type="number" ng-model="wbModel.style.borderWidth.top">
+                </md-input-container>
+                <md-color-picker
+                        class="color-picker-hide-textbox"
+                        md-color-clear-button="false"
+                        label="Color"
+                        icon="brush"
+                        ng-model="wbModel.style.borderColor.top">
+                </md-color-picker>
+            </div>
+            <div layout="row" class="wb-flex-align-items-start" ng-hide="wbModel.style.borderStyleColorWidth.uniform">
+                <span>Down: </span>
+                <md-input-container flex="1">
+                    <label>Style</label>
+                    <md-select ng-model="wbModel.style.borderStyle.bottom">
+                        <md-option ng-repeat="style in styles"
+                                   value="{{style.value}}">
+                            {{style.title}}
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+                <md-input-container flex="0" style="min-width: 100px">
+                    <label>Thickness</label>
+                    <input flex type="number" ng-model="wbModel.style.borderWidth.bottom">
+                </md-input-container>
+                <md-color-picker
+                        class="color-picker-hide-textbox"
+                        md-color-clear-button="false"
+                        label="Color"
+                        icon="brush"
+                        ng-model="wbModel.style.borderColor.bottom">
+                </md-color-picker>
+            </div>
+        </md-list>
+    </div>
+</div>
