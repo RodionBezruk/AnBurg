@@ -108,6 +108,18 @@ angular.module('ngMaterialWeburger')
 				type : 'CollapsibleItemList',
 				style : {},
 			}
+		},
+		Members : {
+			dom : '<wb-members></wb-members>',
+			label : 'Members list',
+			description : 'List of members',
+			image : 'images/wb/notfoundelement.svg',
+			link : 'http:
+			data : {
+				type : 'Members',
+				style : {},
+				template: {}
+			}
 		}
 	};
 	function widget(model) {
@@ -133,6 +145,7 @@ angular.module('ngMaterialWeburger')
 			widgets.items.push(contentElementAsso.SocialList);
 			widgets.items.push(contentElementAsso.LinkList);
 			widgets.items.push(contentElementAsso.HtmlText);
+			widgets.items.push(contentElementAsso.Members);
 			deferred.resolve(widgets);
 		}, 1);
 		return deferred.promise;
