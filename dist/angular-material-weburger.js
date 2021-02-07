@@ -106,7 +106,8 @@ angular.module('ngMaterialWeburger')
 		.then(function(newContent) {
 		    content = newContent;
 		    return content.upload(file);
-		}).then(function() {
+		})
+		.then(function() {
 		    $scope.contents.push(content);
 		    return content;
 		});
