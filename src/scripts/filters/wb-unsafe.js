@@ -1,6 +1,6 @@
 'use strict';
 angular.module('ngMaterialWeburger')
-.filter('unsafe', function($sce) {
+.filter('wbunsafe', function($sce) {
 	return function(val) {
 		return $sce.trustAsHtml(val);
 	};
