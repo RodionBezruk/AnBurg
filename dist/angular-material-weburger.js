@@ -169,7 +169,7 @@ angular.module('ngMaterialWeburger')
 });
 'use strict';
 angular.module('ngMaterialWeburger')
-    .controller('DialogsCtrl', function ($scope, $mdDialog, wbModel, style) {
+    .controller('WbDialogsCtrl', function ($scope, $mdDialog, wbModel, style) {
         function hide() {
             $mdDialog.hide();
         }
@@ -185,7 +185,7 @@ angular.module('ngMaterialWeburger')
         $scope.cancel = cancel;
         $scope.answer = answer;
     })
-    .controller('SettingDialogsCtrl', function ($scope, $mdDialog, wbModel, wbParent, style) {
+    .controller('WbSettingDialogsCtrl', function ($scope, $mdDialog, wbModel, wbParent, style) {
         function hide() {
             $mdDialog.hide();
         }
@@ -204,7 +204,7 @@ angular.module('ngMaterialWeburger')
     });
 'use strict';
 angular.module('ngMaterialWeburger')
-.controller('LayoutSettingsCtrl', function($scope, $settings) {
+.controller('WbLayoutWbSettingsCtrl', function($scope, $settings) {
     var scope = $scope;
     scope.directions = [ {
 	title : 'row',
@@ -253,7 +253,7 @@ angular.module('ngMaterialWeburger')
 });
 'use strict';
 angular.module('ngMaterialWeburger')
-.controller('PageLayoutSettingsCtrl', function($scope, $settings) {
+.controller('WbSelfLayoutWbSettingsCtrl', function($scope, $settings) {
 	var scope = $scope;
 	scope.flexDirection = [ {
 		title : 'row',
@@ -296,7 +296,7 @@ angular.module('ngMaterialWeburger')
 });
 'use strict';
 angular.module('ngMaterialWeburger')
-    .controller('SelfLayoutSettingsCtrl', function($scope, $settings) {
+    .controller('WbSelfLayoutWbSettingsCtrl', function($scope, $settings) {
         var scope = $scope;
         scope.flexAlignItem = [
             {
@@ -318,7 +318,7 @@ angular.module('ngMaterialWeburger')
     });
 'use strict';
 angular.module('ngMaterialWeburger')
-.controller('SettingsCtrl', function($scope, $settings) {
+.controller('WbSettingsCtrl', function($scope, $settings) {
 	var scope = $scope;
 	function loadPages() {
 		var keys = scope.style.pages;
@@ -332,7 +332,7 @@ angular.module('ngMaterialWeburger')
 });
 'use strict';
 angular.module('ngMaterialWeburger')
-    .controller('TextSettingsCtrl', function($scope) {
+    .controller('WbTextSettingsCtrl', function($scope) {
         var scope = $scope;
         scope.tinymceOptions = {
             selector: 'textarea',
@@ -381,7 +381,7 @@ angular.module('ngMaterialWeburger')
 	    }
 	    function editAction(action) {
 		return $mdDialog.show({
-		    controller : 'DialogsCtrl',
+		    controller : 'WbDialogsCtrl',
 		    templateUrl : 'views/dialogs/wb-action.html',
 		    parent : angular.element(document.body),
 		    clickOutsideToClose : true,
@@ -410,7 +410,7 @@ angular.module('ngMaterialWeburger')
 	    }
 	    function settings() {
 		return $mdDialog.show({
-		    controller : 'DialogsCtrl',
+		    controller : 'WbDialogsCtrl',
 		    templateUrl : 'views/dialogs/wb-settings.html',
 		    parent : angular.element(document.body),
 		    clickOutsideToClose : true,
@@ -505,7 +505,7 @@ angular.module('ngMaterialWeburger')
 		    }
 		    function newWidget(wbModel) {
 			$mdDialog.show({
-			    controller : 'DialogsCtrl',
+			    controller : 'WbDialogsCtrl',
 			    templateUrl : 'views/dialogs/wb-selectwidget.html',
 			    parent : angular.element(document.body),
 			    clickOutsideToClose : true,
@@ -582,7 +582,7 @@ angular.module('ngMaterialWeburger')
 	    }
 	    function settings() {
 		return $mdDialog.show({
-		    controller : 'DialogsCtrl',
+		    controller : 'WbDialogsCtrl',
 		    templateUrl : 'views/dialogs/wb-settings.html',
 		    parent : angular.element(document.body),
 		    clickOutsideToClose : true,
@@ -627,7 +627,7 @@ angular.module('ngMaterialWeburger')
 	    }
 	    function editFeature(feature) {
 		return $mdDialog.show({
-		    controller : 'DialogsCtrl',
+		    controller : 'WbDialogsCtrl',
 		    templateUrl : 'views/dialogs/wb-ticket.html',
 		    parent : angular.element(document.body),
 		    clickOutsideToClose : true,
@@ -651,7 +651,7 @@ angular.module('ngMaterialWeburger')
 	    }
 	    function settings() {
 		return $mdDialog.show({
-		    controller : 'DialogsCtrl',
+		    controller : 'WbDialogsCtrl',
 		    templateUrl : 'views/dialogs/wb-settings.html',
 		    parent : angular.element(document.body),
 		    clickOutsideToClose : true,
@@ -708,7 +708,7 @@ angular.module('ngMaterialWeburger')
 		    }
 		    function settings() {
 			return $mdDialog.show({
-			    controller : 'SettingDialogsCtrl',
+			    controller : 'WbSettingDialogsCtrl',
 			    templateUrl : 'views/dialogs/wb-settings.html',
 			    parent : angular.element(document.body),
 			    clickOutsideToClose : true,
@@ -959,7 +959,7 @@ angular.module('ngMaterialWeburger')
 			}
 			function editSocial(social){
 				return $mdDialog.show({
-					controller : 'DialogsCtrl',
+					controller : 'WbDialogsCtrl',
 					templateUrl : 'views/dialogs/wb-social.html',
 					parent : angular.element(document.body),
 					clickOutsideToClose : true,
@@ -994,7 +994,7 @@ angular.module('ngMaterialWeburger')
 			}
 			function settings (){
 				return $mdDialog.show({
-					controller : 'DialogsCtrl',
+					controller : 'WbDialogsCtrl',
 					templateUrl : 'views/dialogs/wb-settings.html',
 					parent : angular.element(document.body),
 					clickOutsideToClose : true,
@@ -1084,7 +1084,7 @@ angular.module('ngMaterialWeburger')
     }
     function loadSetting(locals) {
 	return $mdDialog.show({
-	    controller : 'SettingDialogsCtrl',
+	    controller : 'WbSettingDialogsCtrl',
 	    templateUrl : 'views/dialogs/wb-settings.html',
 	    parent : angular.element(document.body),
 	    clickOutsideToClose : true,
@@ -1275,7 +1275,7 @@ angular.module('ngMaterialWeburger').run(['$templateCache', function($templateCa
     "<md-dialog aria-label=\"edit action dialog\" ng-controller=ContentSelectCtrl ng-cloak>  <md-toolbar> <div class=md-toolbar-tools> <h2 translate>Widget list</h2> <span flex></span> <md-button class=md-icon-button ng-click=cancel()> <md-icon aria-label=\"Close dialog\">close</md-icon> </md-button> </div> </md-toolbar>    <md-dialog-content> <md-content class=\"md-padding md-dialog-content\" layout-xs=column layout=row layout-wrap>    <md-card ng-repeat=\"widget in widgets.items\" flex-xs flex-gt-xs=45 md-theme-watch> <md-card-title> <md-card-title-text> <span class=md-headline>{{widget.label}}</span> <span class=md-subhead>{{widget.description}}</span> </md-card-title-text> <md-card-title-media> <img src=\"{{widget.image}}\"> </md-card-title-media> </md-card-title> <md-card-actions layout=row layout-align=\"end center\"> <md-button ng-click=answerWidget(widget)> <md-icon>add</md-icon> {{ 'Add' | translate }} </md-button>  </md-card-actions> </md-card> </md-content> </md-dialog-content> </md-dialog>"
   );
   $templateCache.put('views/dialogs/wb-settings.html',
-    " <md-dialog ng-controller=SettingsCtrl aria-label=\"Setting dialog\" ng-cloak> <md-toolbar> <div class=md-toolbar-tools> <h2 translate>Settings</h2> <span flex></span> <md-button class=md-icon-button ng-click=answer()> <md-icon aria-label=\"Close dialog\">close</md-icon> </md-button> </div> </md-toolbar> <md-dialog-content> <md-content class=md-dialog-content> <md-tabs md-dynamic-height md-border-bottom> <md-tab ng-repeat=\"setting in settings\" label=\"{{setting.label | translate}}\"> <md-content layout=row flex ng-include=setting.page class=md-padding> </md-content> </md-tab> </md-tabs> </md-content> </md-dialog-content> </md-dialog>"
+    " <md-dialog ng-controller=WbSettingsCtrl aria-label=\"Setting dialog\" ng-cloak> <md-toolbar> <div class=md-toolbar-tools> <h2 translate>Settings</h2> <span flex></span> <md-button class=md-icon-button ng-click=answer()> <md-icon aria-label=\"Close dialog\">close</md-icon> </md-button> </div> </md-toolbar> <md-dialog-content> <md-content class=md-dialog-content> <md-tabs md-dynamic-height md-border-bottom> <md-tab ng-repeat=\"setting in settings\" label=\"{{setting.label | translate}}\"> <md-content layout=row flex ng-include=setting.page class=md-padding> </md-content> </md-tab> </md-tabs> </md-content> </md-dialog-content> </md-dialog>"
   );
   $templateCache.put('views/dialogs/wb-social.html',
     "<md-dialog aria-label=\"edit action dialog\" ng-cloak> <form ng-submit=answer(mdeModel)>  <md-toolbar> <div class=md-toolbar-tools> <h2 translate>Social</h2> <span flex></span> <md-button class=md-icon-button ng-click=cancel()> <md-icon aria-label=\"Close dialog\">close</md-icon> </md-button> </div> </md-toolbar>    <md-dialog-content> <div ng-controller=WbActionCtrl layout=column class=md-dialog-content> <mde-iconfont-choise mde-model=mdeModel.icon mde-list-url=styles/fonts/social-codepoints.json mde-font-set=mono-social-icons> </mde-iconfont-choise>              <md-input-container> <label translate>Link</label> <input ng-model=mdeModel.action.value> </md-input-container> </div> </md-dialog-content> <input type=submit hidden> </form> </md-dialog>"
@@ -1439,13 +1439,13 @@ angular.module('ngMaterialWeburger').run(['$templateCache', function($templateCa
     "General settings"
   );
   $templateCache.put('views/settings/wb-layout-page.html',
-    " <div layout=column>   <div class=\"preview-box wb-flex-item-stretch\"> <div class=header>Preview</div> <div class=\"preview-area wb-flex\" ng-class=\"[wbModel.style.flexDirection,wbModel.style.justifyContent, wbModel.style.alignItems]\"> <div class=widget layout=row layout-align=\"center center\"><p>1</p></div> <div class=widget layout=row layout-align=\"center center\"><p>2</p></div> <div class=widget layout=row layout-align=\"center center\"><p>3</p></div> </div> </div> <div class=setting-panel layout=column layout-gt-sm=row ng-controller=PageLayoutSettingsCtrl>  <md-list> <md-subheader>Direction</md-subheader> <md-divider style=\"margin-bottom: 1em\"></md-divider> <md-radio-group ng-model=wbModel.style.flexDirection role=radiogroup> <md-list-item ng-repeat=\"direction in flexDirection\"> <md-radio-button value={{direction.value}}> <md-icon>{{direction.icon}}</md-icon> {{direction.title |translate}} </md-radio-button> </md-list-item> </md-radio-group> </md-list>  <md-list> <md-subheader ng-show=\"wbModel.style.flexDirection=='wb-flex-row'\">Vertical Setting</md-subheader> <md-subheader ng-show=\"wbModel.style.flexDirection!='wb-flex-row'\">Horizontal Setting</md-subheader> <md-divider style=\"margin-bottom: 1em\"></md-divider> <md-radio-group ng-model=wbModel.style.alignItems role=radiogroup> <md-list-item ng-repeat=\"align in alignItems\"> <md-radio-button value={{align.value}}> <md-icon>{{direction.icon}}</md-icon> {{align.title |translate}} </md-radio-button> </md-list-item> </md-radio-group> </md-list>  <md-list> <md-subheader ng-show=\"wbModel.style.flexDirection!='wb-flex-row'\">Vertical Setting</md-subheader> <md-subheader ng-show=\"wbModel.style.flexDirection=='wb-flex-row'\">Horizontal Setting</md-subheader> <md-divider style=\"margin-bottom: 1em\"></md-divider> <md-radio-group ng-model=wbModel.style.justifyContent role=radiogroup> <md-list-item ng-repeat=\"align in justifyContent\"> <md-radio-button value={{align.value}}> <md-icon>{{direction.icon}}</md-icon> {{align.title |translate}} </md-radio-button> </md-list-item> </md-radio-group> </md-list> </div> </div>"
+    " <div layout=column>   <div class=\"preview-box wb-flex-item-stretch\"> <div class=header>Preview</div> <div class=\"preview-area wb-flex\" ng-class=\"[wbModel.style.flexDirection,wbModel.style.justifyContent, wbModel.style.alignItems]\"> <div class=widget layout=row layout-align=\"center center\"><p>1</p></div> <div class=widget layout=row layout-align=\"center center\"><p>2</p></div> <div class=widget layout=row layout-align=\"center center\"><p>3</p></div> </div> </div> <div class=setting-panel layout=column layout-gt-sm=row ng-controller=WbSelfLayoutWbSettingsCtrl>  <md-list> <md-subheader>Direction</md-subheader> <md-divider style=\"margin-bottom: 1em\"></md-divider> <md-radio-group ng-model=wbModel.style.flexDirection role=radiogroup> <md-list-item ng-repeat=\"direction in flexDirection\"> <md-radio-button value={{direction.value}}> <md-icon>{{direction.icon}}</md-icon> {{direction.title |translate}} </md-radio-button> </md-list-item> </md-radio-group> </md-list>  <md-list> <md-subheader ng-show=\"wbModel.style.flexDirection=='wb-flex-row'\">Vertical Setting</md-subheader> <md-subheader ng-show=\"wbModel.style.flexDirection!='wb-flex-row'\">Horizontal Setting</md-subheader> <md-divider style=\"margin-bottom: 1em\"></md-divider> <md-radio-group ng-model=wbModel.style.alignItems role=radiogroup> <md-list-item ng-repeat=\"align in alignItems\"> <md-radio-button value={{align.value}}> <md-icon>{{direction.icon}}</md-icon> {{align.title |translate}} </md-radio-button> </md-list-item> </md-radio-group> </md-list>  <md-list> <md-subheader ng-show=\"wbModel.style.flexDirection!='wb-flex-row'\">Vertical Setting</md-subheader> <md-subheader ng-show=\"wbModel.style.flexDirection=='wb-flex-row'\">Horizontal Setting</md-subheader> <md-divider style=\"margin-bottom: 1em\"></md-divider> <md-radio-group ng-model=wbModel.style.justifyContent role=radiogroup> <md-list-item ng-repeat=\"align in justifyContent\"> <md-radio-button value={{align.value}}> <md-icon>{{direction.icon}}</md-icon> {{align.title |translate}} </md-radio-button> </md-list-item> </md-radio-group> </md-list> </div> </div>"
   );
   $templateCache.put('views/settings/wb-layout-self.html',
-    " <div layout=column>   <div class=\"preview-box wb-flex-item-stretch\"> <div class=header>Preview</div> <div class=preview-area ng-class=\"[mdeParent.mdeModel.style.flexDirection,mdeModel.style.justifyContent, mdeModel.style.alignItems]\" style=\"display: flex\"> <div class=widget layout=row layout-align=\"center center\"><p>before</p></div> <div class=widget ng-class=mdeModel.style.flexAlignItem ng-style=\"{'flex-grow':mdeModel.style.flexItemGrow,'-webkit-flex-grow':mdeModel.style.flexItemGrow}\" layout=row layout-align=\"center center\" style=\"border: 2px dotted\"><p> item</p></div> <div class=widget layout=row layout-align=\"center center\"><p>after</p></div> </div> </div> <div class=setting-panel layout=column layout-align=\"none none\" layout-gt-sm=row layout-align-gt-sm=\"space-around none\" ng-controller=SelfLayoutSettingsCtrl>  <md-list> <md-subheader ng-show=\"mdeModel.style.flexDirection!='mde-flex-row'\">Vertical Setting</md-subheader> <md-subheader ng-show=\"mdeModel.style.flexDirection=='mde-flex-row'\">Horizontal Setting</md-subheader> <md-divider style=\"margin-bottom: 1em\"></md-divider> <md-radio-group ng-model=mdeModel.style.flexAlignItem role=radiogroup> <md-list-item ng-repeat=\"direction in flexAlignItem\"> <md-radio-button value={{direction.value}}> <md-icon>{{direction.icon}}</md-icon> {{direction.title |translate}} </md-radio-button> </md-list-item> </md-radio-group> </md-list>  <md-list> <md-subheader>Fill Extra Space</md-subheader> <md-divider style=\"margin-bottom: 1em\"></md-divider> <div layout=column style=\"margin-left: 14px; margin-right: 14px; min-width: 200px\"> <md-checkbox ng-model=mdeModel.style.flexItemGrowEnabled style=\"margin-bottom: 2em\">Enabled</md-checkbox> <div layout=row class=mde-flex-align-items-center ng-disabled=!mdeModel.style.flexItemGrowEnabled> <span>Weight</span> <md-slider ng-disabled=!mdeModel.style.flexItemGrowEnabled flex min=0 max=10 step=1 ng-model=mdeModel.style.flexItemGrow> </md-slider> <md-input-container> <input ng-disabled=!mdeModel.style.flexItemGrowEnabled style=\"width: 50px\" flex type=number ng-model=mdeModel.style.flexItemGrow> </md-input-container> </div> </div> </md-list> </div> </div>"
+    " <div layout=column>   <div class=\"preview-box wb-flex-item-stretch\"> <div class=header>Preview</div> <div class=preview-area ng-class=\"[mdeParent.mdeModel.style.flexDirection,mdeModel.style.justifyContent, mdeModel.style.alignItems]\" style=\"display: flex\"> <div class=widget layout=row layout-align=\"center center\"><p>before</p></div> <div class=widget ng-class=mdeModel.style.flexAlignItem ng-style=\"{'flex-grow':mdeModel.style.flexItemGrow,'-webkit-flex-grow':mdeModel.style.flexItemGrow}\" layout=row layout-align=\"center center\" style=\"border: 2px dotted\"><p> item</p></div> <div class=widget layout=row layout-align=\"center center\"><p>after</p></div> </div> </div> <div class=setting-panel layout=column layout-align=\"none none\" layout-gt-sm=row layout-align-gt-sm=\"space-around none\" ng-controller=WbSelfLayoutWbSettingsCtrl>  <md-list> <md-subheader ng-show=\"mdeModel.style.flexDirection!='mde-flex-row'\">Vertical Setting</md-subheader> <md-subheader ng-show=\"mdeModel.style.flexDirection=='mde-flex-row'\">Horizontal Setting</md-subheader> <md-divider style=\"margin-bottom: 1em\"></md-divider> <md-radio-group ng-model=mdeModel.style.flexAlignItem role=radiogroup> <md-list-item ng-repeat=\"direction in flexAlignItem\"> <md-radio-button value={{direction.value}}> <md-icon>{{direction.icon}}</md-icon> {{direction.title |translate}} </md-radio-button> </md-list-item> </md-radio-group> </md-list>  <md-list> <md-subheader>Fill Extra Space</md-subheader> <md-divider style=\"margin-bottom: 1em\"></md-divider> <div layout=column style=\"margin-left: 14px; margin-right: 14px; min-width: 200px\"> <md-checkbox ng-model=mdeModel.style.flexItemGrowEnabled style=\"margin-bottom: 2em\">Enabled</md-checkbox> <div layout=row class=mde-flex-align-items-center ng-disabled=!mdeModel.style.flexItemGrowEnabled> <span>Weight</span> <md-slider ng-disabled=!mdeModel.style.flexItemGrowEnabled flex min=0 max=10 step=1 ng-model=mdeModel.style.flexItemGrow> </md-slider> <md-input-container> <input ng-disabled=!mdeModel.style.flexItemGrowEnabled style=\"width: 50px\" flex type=number ng-model=mdeModel.style.flexItemGrow> </md-input-container> </div> </div> </md-list> </div> </div>"
   );
   $templateCache.put('views/settings/wb-layout.html',
-    " <div layout=column ng-style=\"{'width': '100%'}\">  <div class=preview-box> <div class=header>Preview</div> <div class=preview-area layout={{wbModel.style.direction}} layout-align=\"{{wbModel.style.directionAlignment}} {{wbModel.style.perpendicularAlignment}}\"> <div class=widget layout=row layout-align=\"center center\"><p>1</p></div> <div class=widget layout=row layout-align=\"center center\"><p>2</p></div> <div class=widget layout=row layout-align=\"center center\"><p>3</p></div> </div> </div> <div layout=column layout-align=\"none none\" layout-gt-sm=row layout-align-gt-sm=\"space-around none\" ng-controller=LayoutSettingsCtrl> <div> <div>Layout Direction</div> <md-radio-group ng-model=wbModel.style.direction role=radiogroup> <md-radio-button ng-repeat=\"direction in directions\" value={{direction.value}}> <md-icon>{{direction.icon}}</md-icon> {{direction.title |translate}} </md-radio-button> </md-radio-group> </div> <div> <div>Alignment in Layout Direction</div> <md-radio-group ng-model=wbModel.style.directionAlignment role=radiogroup> <md-radio-button ng-repeat=\"align in directionAlignments\" value={{align.value}}> {{align.title}} </md-radio-button> </md-radio-group> </div> <div> <div>Alignment in Perpendicular Direction</div> <md-radio-group ng-model=wbModel.style.perpendicularAlignment role=radiogroup> <md-radio-button ng-repeat=\"align in perpendicularAlignments\" value={{align.value}}> {{align.title}} </md-radio-button> </md-radio-group> </div> </div> </div>"
+    " <div layout=column ng-style=\"{'width': '100%'}\">  <div class=preview-box> <div class=header>Preview</div> <div class=preview-area layout={{wbModel.style.direction}} layout-align=\"{{wbModel.style.directionAlignment}} {{wbModel.style.perpendicularAlignment}}\"> <div class=widget layout=row layout-align=\"center center\"><p>1</p></div> <div class=widget layout=row layout-align=\"center center\"><p>2</p></div> <div class=widget layout=row layout-align=\"center center\"><p>3</p></div> </div> </div> <div layout=column layout-align=\"none none\" layout-gt-sm=row layout-align-gt-sm=\"space-around none\" ng-controller=WbLayoutWbSettingsCtrl> <div> <div>Layout Direction</div> <md-radio-group ng-model=wbModel.style.direction role=radiogroup> <md-radio-button ng-repeat=\"direction in directions\" value={{direction.value}}> <md-icon>{{direction.icon}}</md-icon> {{direction.title |translate}} </md-radio-button> </md-radio-group> </div> <div> <div>Alignment in Layout Direction</div> <md-radio-group ng-model=wbModel.style.directionAlignment role=radiogroup> <md-radio-button ng-repeat=\"align in directionAlignments\" value={{align.value}}> {{align.title}} </md-radio-button> </md-radio-group> </div> <div> <div>Alignment in Perpendicular Direction</div> <md-radio-group ng-model=wbModel.style.perpendicularAlignment role=radiogroup> <md-radio-button ng-repeat=\"align in perpendicularAlignments\" value={{align.value}}> {{align.title}} </md-radio-button> </md-radio-group> </div> </div> </div>"
   );
   $templateCache.put('views/settings/wb-margin-padding.html',
     " <div layout=column>   <div class=\"preview-box wb-flex-item-stretch\"> <div class=header>Preview</div> <div class=preview-area ng-class=\"[wbParent.wbModel.style.flexDirection,wbModel.style.justifyContent, wbModel.style.alignItems]\" style=\"display: flex\"> <div class=widget layout=row layout-align=\"center center\"><p>before</p></div> <div class=widget ng-class=wbModel.style.flexAlignItem ng-style=\"{\n" +
@@ -1473,7 +1473,7 @@ angular.module('ngMaterialWeburger').run(['$templateCache', function($templateCa
     " <md-icon>bug</md-icon> <h2>Settings page not found</h2>"
   );
   $templateCache.put('views/settings/wb-text.html',
-    " <div ng-controller=TextSettingsCtrl layout=column>  <textarea ui-tinymce=tinymceOptions ng-model=wbModel.text style=\"width: 100%\">\n" +
+    " <div ng-controller=WbTextSettingsCtrl layout=column>  <textarea ui-tinymce=tinymceOptions ng-model=wbModel.text style=\"width: 100%\">\n" +
     "\t</textarea> </div>"
   );
 }]);

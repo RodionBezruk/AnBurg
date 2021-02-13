@@ -1,6 +1,6 @@
 'use strict';
 angular.module('ngMaterialWeburger')
-.controller('LayoutSettingsCtrl', function($scope, $settings) {
+.controller('WbLayoutWbSettingsCtrl', function($scope, $settings) {
     var scope = $scope;
     scope.directions = [ {
 	title : 'row',

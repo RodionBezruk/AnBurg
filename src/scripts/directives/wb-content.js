@@ -15,7 +15,7 @@ angular.module('ngMaterialWeburger')
 		    wbEditable : '=?',
 		    wbParent : '=?'
 		},
-		controller : function($scope, $element, $settings, $mdDialog) {
+		controller : function($scope, $element, $settings, $widget) {
 		    var scope = $scope;
 		    function isEditable() {
 			if (scope.wbParent) {
@@ -52,17 +52,11 @@ angular.module('ngMaterialWeburger')
 			scope.wbModel.contents.forEach(addWidget);
 		    }
 		    function newWidget(wbModel) {
-			$mdDialog.show({
-			    controller : 'DialogsCtrl',
-			    templateUrl : 'views/dialogs/wb-selectwidget.html',
-			    parent : angular.element(document.body),
-			    clickOutsideToClose : true,
-			    fullscreen : true,
-			    locals : {
-				wbModel : {},
-				style : {}
-			    },
-			}).then(function(model) {
+			return $widget.select({
+			    wbModel : {},
+			    style : {}
+			})
+			.then(function(model) {
 			    wbModel.contents.push(model);
 			    addWidget(model);
 			});

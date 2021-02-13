@@ -1,6 +1,6 @@
 'use strict';
 angular.module('ngMaterialWeburger')
-.service('$widget', function($q, $timeout, PaginatorPage) {
+.service('$widget', function($q, $timeout, $mdDialog, PaginatorPage) {
 	var contentElementAsso = {
 		Page : {
 			dom : '<wb-content></wb-content>',
@@ -150,6 +150,17 @@ angular.module('ngMaterialWeburger')
 		}, 1);
 		return deferred.promise;
 	}
+	function select(locals){
+	    return $mdDialog.show({
+		controller : 'WbDialogsCtrl',
+		templateUrl : 'views/dialogs/wb-selectwidget.html',
+		parent : angular.element(document.body),
+		clickOutsideToClose : true,
+		fullscreen : true,
+		locals : locals,
+	    });
+	}
 	this.widget = widget;
 	this.widgets = widgets;
+	this.select = select;
 });

@@ -1,6 +1,6 @@
 'use strict';
 angular.module('ngMaterialWeburger')
-.controller('SettingsCtrl', function($scope, $settings) {
+.controller('WbSettingsCtrl', function($scope, $settings) {
 	var scope = $scope;
 	function loadPages() {
 		var keys = scope.style.pages;

@@ -24,7 +24,7 @@ angular.module('ngMaterialWeburger')
 			}
 			function editSocial(social){
 				return $mdDialog.show({
-					controller : 'DialogsCtrl',
+					controller : 'WbDialogsCtrl',
 					templateUrl : 'views/dialogs/wb-social.html',
 					parent : angular.element(document.body),
 					clickOutsideToClose : true,
@@ -59,7 +59,7 @@ angular.module('ngMaterialWeburger')
 			}
 			function settings (){
 				return $mdDialog.show({
-					controller : 'DialogsCtrl',
+					controller : 'WbDialogsCtrl',
 					templateUrl : 'views/dialogs/wb-settings.html',
 					parent : angular.element(document.body),
 					clickOutsideToClose : true,
