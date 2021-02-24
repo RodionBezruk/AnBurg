@@ -2,7 +2,7 @@
 angular.module('ngMaterialWeburger')
 .controller('WbBorderSettingCtrl', function($scope) {
     var scope = $scope;
-    var model = $scope.mdeModel;
+    var model = $scope.wbModel;
     scope.styles = [ {
 	title : 'No Border',
 	value : 'none'
